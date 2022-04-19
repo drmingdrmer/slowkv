@@ -5,9 +5,6 @@ edition = "2021"
 authors = [
     "Zhang yanpo <drdr.xp@gmail.com>",
 ]
-
-
-[package]
 categories = ["algorithms", "asynchronous", "data-structures"]
 description = "kv"
 # documentation = "https://docs.rs/slowkv"
