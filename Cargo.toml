@@ -1,0 +1,54 @@
+[package]
+name = "slowkv"
+version = "0.1.0"
+edition = "2021"
+authors = [
+    "Zhang yanpo <drdr.xp@gmail.com>",
+]
+
+
+[package]
+categories = ["algorithms", "asynchronous", "data-structures"]
+description = "kv"
+# documentation = "https://docs.rs/slowkv"
+homepage = "https://github.com/drmingdrmer/slowkv"
+keywords = ["kv"]
+license = "Apache-2.0"
+repository = "https://github.com/drmingdrmer/slowkv"
+readme = "README.md"
+
+[dependencies]
+anyerror = { version = "0.1.6" }
+async-trait = "0.1.36"
+# byte-unit = "4.0.12"
+bytes = "1.0"
+derive_more = { version="0.99.9" }
+futures = "0.3"
+maplit = "1.0.2"
+# rand = "0.8"
+serde = { version="1", features=["derive", "rc"] }
+# clap = { version = "3.0.7", features = ["derive", "env"] }
+thiserror = "1.0.29"
+tokio = { version="1.8", default-features=false, features=["fs", "io-util", "macros", "rt", "rt-multi-thread", "sync", "time"] }
+tracing = "0.1.29"
+tracing-futures = "0.2.4"
+
+[dev-dependencies]
+anyhow = "1.0.32"
+async-entry = "0.2.0"
+lazy_static = "1.4.0"
+pretty_assertions = "1.0.0"
+tracing-appender = "0.2.0"
+tracing-subscriber = { version = "0.3.3",  features=["env-filter"] }
+
+
+
+[features]
+docinclude = [] # Used only for activating `doc(include="...")` on nightly.
+
+# Enable backtrace when generating an error.
+# Stable rust does not support backtrace.
+bt  = ["anyerror/backtrace", "anyhow/backtrace"]
+
+[package.metadata.docs.rs]
+features = ["docinclude"] # Activate `docinclude` during docs.rs build.
